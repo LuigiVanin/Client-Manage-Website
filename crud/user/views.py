@@ -13,7 +13,7 @@ def login(request: HttpRequest) -> HttpResponse:
         data = request.POST
         print(data)
         
-        if not data["username"].strip() or not data["pass"]:
+        if not data["username"].strip() or not data["pass"].strip():
             
             return redirect('login')
         
@@ -36,7 +36,7 @@ def login(request: HttpRequest) -> HttpResponse:
     elif request.method == "GET":
         
         if not request.user.is_anonymous:
-            auth.logout(request)
+            redirect('logout')
         
         return render(request=request,
                     template_name="index.html",
@@ -45,4 +45,10 @@ def login(request: HttpRequest) -> HttpResponse:
     
     
 def logout(request: HttpRequest):
-    pass
+    '''
+    Rota para o logout do usuário
+    '''
+    if not request.user.is_anonymous:
+        auth.logout(request)
+        
+    return redirect('login')
