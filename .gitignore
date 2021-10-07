@@ -1,0 +1,4 @@
+db.sqlite3
+crud-venv/
+__pycache__/
+preview/

@@ -1,0 +1,54 @@
+{% extends 'base/log_in.html' %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="header__wrapper">
+        <a href="#" id="logo">CRUD</a>
+
+        <nav>
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="content">
+        <div class="content__left"></div>
+        <div class="content__right">
+            <div class="content__form">
+                <form class="sign-form" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="top">
+                        <h1>CRUD: Log in</h1>
+
+                        <div class="top__nickname">
+                            <label for="username" class="nick-label">Username:</label>
+                            <input type="text" name="username" id="nickname" placeholder="Username" required>
+                        </div>
+
+                        <div class="top__password">
+                            <label for="pass" class="pass-label">Password:</label>
+                            <input type="password" name="pass" id="password" placeholder="pasword" required>
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+
+                        <button class="btn" type="submit">
+                            <span>Sign In </span>
+                            <ion-icon name="arrow-forward-outline" class="btn__arrow"></ion-icon>
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
