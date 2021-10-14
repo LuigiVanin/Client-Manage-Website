@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: hsl(0, 0%, 96%);
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.crud {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 70%;
+    box-shadow: 0px 7px 15px -2px rgba(0, 0, 0, 0.507);
+    box-sizing: border-box;
+    height: 500px;
+    overflow-x: hidden;
+}
+
+.crud .crud__main {
+    background-color: var(--redcolor);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 4px 15px -2px rgba(92, 92, 92, 0.904);
+}
+
+.crud .crud__main h2 {
+    padding-block: 15px;
+    text-align: center;
+    color: rgb(253, 253, 253);
+    font-family: "Roboto", sans-serif;
+}
+
+.crud__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.crud .crud__header ul {
+    display: flex;
+}
+
+.crud__header ul li {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    padding-block: 7px;
+    flex: 1;
+    color: rgb(114, 114, 114);
+    border-right: 1px solid rgb(180, 180, 180);
+    border-bottom: 1px solid rgb(180, 180, 180);
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.crud .crud__item ul {
+    display: flex;
+}
+
+.crud__item ul li {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    padding-block: 8px;
+    flex: 1;
+    color: rgb(0, 0, 0);
+    border-right: 1px solid rgb(180, 180, 180);
+    border-bottom: 1px solid rgb(180, 180, 180);
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.crud__item ul li:last-child,
+.crud__header ul li:last-child {
+    border-right: none;
+}
+
+.crud__item ul li:last-child {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    padding: 0;
+}
+
+.crud__item ul li:last-child a:first-child,
+.crud__item ul li:last-child a:last-child {
+    text-decoration: none;
+    color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: var(--redcolor);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crud__item ul li:last-child a:first-child {
+    background-color: rgb(122, 180, 35);
+}
+
+.fab {
+    background-color: var(--redcolor);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 5px;
+    right: calc(15% - 10px);
+    color: white;
+    font-size: 30px;
+    font-weight: 1000;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px -1px rgba(0, 0, 0, 0.555);
+}

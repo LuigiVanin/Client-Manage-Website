@@ -12,7 +12,7 @@ def crud(request: HttpRequest) -> HttpResponse:
     if request.user.is_anonymous or not request.user.is_authenticated:
         return redirect('login')
     
-    data = Clients.objects.filter(published=True)
+    data = Clients.objects.filter(published=True).order_by("-create_at")
     
     return render(request=request,
                   template_name="crud.html",

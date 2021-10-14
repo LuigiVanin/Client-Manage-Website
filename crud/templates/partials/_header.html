@@ -1,0 +1,21 @@
+{% load static %}
+
+<header>
+    <div class="header__wrapper">
+        <a href="#" id="logo">CRUD</a>
+
+        <nav>
+            <ul id="menu">
+                {% if not user.is_authenticated %}
+                <li><a href="#">Home</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Sobre</a></li>
+                {% else %}
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Create Register</a></li>
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>

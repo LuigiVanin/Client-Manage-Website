@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from django.conf import settings
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Clients(models.Model):
@@ -11,7 +11,7 @@ class Clients(models.Model):
     create_at = models.DateTimeField(default=datetime.now, blank=True)
     published = models.BooleanField(default=True)
     debt = models.FloatField(default=0)
-    # owner = models.Foreight(settings.AUTH_USER_MODEL, on_delete=models.CASCATE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name
