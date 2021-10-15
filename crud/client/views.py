@@ -12,16 +12,27 @@ def crud(request: HttpRequest) -> HttpResponse:
     if request.user.is_anonymous or not request.user.is_authenticated:
         return redirect('login')
     
-    data = Clients.objects.filter(published=True).order_by("-create_at")
-    
-    return render(request=request,
-                  template_name="crud.html",
-                  context={"clients": data},
-                  status=203)   
+    else:
+        data = Clients.objects.filter(owner=request.user.id).order_by('-id')
+        
+        return render(request=request,
+                    template_name="crud.html",
+                    context={"clients": data},
+                    status=203)   
     
 
 def edit(request: HttpRequest, client_id:int) -> HttpResponse:
     pass
 
-def delete(request: HttpRequest, client: id) -> HttpResponse:
-    pass
+def delete(request: HttpRequest, client_id: id) -> HttpResponse:
+    if request.user.is_authenticated:
+        client: Clients = Clients.objects.filter(owner=request.user.id).filter(id=client_id).first()
+        
+        if not client:
+            return redirect('crud')
+        else:
+            print(client_id)
+            print(client)
+            client.delete()
+            
+            return redirect('crud')

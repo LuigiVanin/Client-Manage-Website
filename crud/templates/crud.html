@@ -21,6 +21,9 @@
                 </ul>
             </div>
 
+            {% if not clients %}
+            <p>Não foi encontrado nenhum cliente para você :/</p>
+            {%else%}
             {% for item in clients %}
             <div class="crud__item">
                 <ul>
@@ -32,13 +35,14 @@
                         <a href="">
                             <ion-icon class="edit" name="clipboard-outline"></ion-icon>
                         </a>
-                        <a href="">
+                        <a href="{% url 'delete' item.id %}">
                             <ion-icon class="close" name="trash-outline"></ion-icon>
                         </a>
                     </li>
                 </ul>
             </div>
             {% endfor %}
+            {% endif %}
         </div>
     </div>
     <a class="fab">
