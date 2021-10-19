@@ -3,6 +3,7 @@ from django.http import HttpRequest, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Clients
+from .form import ClientForm
     
 def crud(request: HttpRequest) -> HttpResponse:
     '''
@@ -21,7 +22,24 @@ def crud(request: HttpRequest) -> HttpResponse:
                     status=203)   
     
 
-def edit(request: HttpRequest, client_id:int) -> HttpResponse:
+def create(request: HttpRequest) -> HttpResponse:
+    
+    if request.method == "GET":
+    
+        form = ClientForm()
+        
+        return render(request,
+                    template_name="create.html",
+                    context={"form": form},
+                    status=200)
+        
+    elif request.method == "POST":
+        
+        print(request.POST)
+        
+        return redirect('crud')
+    
+def edit(request: HttpRequest, client_id: id) -> HttpResponse:
     pass
 
 def delete(request: HttpRequest, client_id: id) -> HttpResponse:
@@ -31,8 +49,6 @@ def delete(request: HttpRequest, client_id: id) -> HttpResponse:
         if not client:
             return redirect('crud')
         else:
-            print(client_id)
-            print(client)
             client.delete()
             
             return redirect('crud')

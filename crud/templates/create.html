@@ -1,0 +1,36 @@
+{% extends 'base/base_form.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/_header.html' %}
+
+<div class="wrapper">
+    <h1>Crie a ficha para o cliente: {{user.name}}</h1>
+</div>
+
+<hr>
+
+<form action="{% url 'create' %}" method="POST">
+
+    {% csrf_token %}
+
+    {%for item in form%}
+
+    <div class="item ">
+        {{item.label_tag}}
+        {{item}}
+    </div>
+
+    {% endfor %}
+
+    <div class="bottom">
+
+        <button class="btn" type="submit">
+            <span>Create </span>
+            <ion-icon name="arrow-forward-outline" class="btn__arrow"></ion-icon>
+        </button>
+
+    </div>
+</form>
+
+{% endblock %}

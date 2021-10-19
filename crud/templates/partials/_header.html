@@ -2,7 +2,11 @@
 
 <header>
     <div class="header__wrapper">
+        {% if not user.is_authenticated %}
         <a href="#" id="logo">CRUD</a>
+        {% else %}
+        <a href="{% url 'crud' %}" id="logo">CRUD</a>
+        {% endif %}
 
         <nav>
             <ul id="menu">

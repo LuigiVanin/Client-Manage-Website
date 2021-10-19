@@ -1,0 +1,86 @@
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    display: inline;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+}
+
+hr {
+    width: 80%;
+}
+
+form {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.item,
+.side-bar {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 3px;
+    position: relative;
+    padding-inline: 15px;
+}
+
+.item::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+
+.side-bar::after {
+    height: 100%;
+    width: 3px;
+    left: 0px;
+    bottom: 0px;
+    background-color: var(--redcolor);
+    transition: 0.3s;
+}
+
+label {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    position: relative;
+}
+
+input {
+    height: 50px;
+    border-radius: 4px;
+    border: 0px;
+    font-size: 20px;
+    font-weight: 100;
+    z-index: 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.055);
+    color: rgb(75, 75, 75);
+    padding-left: 10px;
+    border: 0px;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+input:focus {
+    border: 1px solid rgb(255, 106, 80);
+    font-size: 20px;
+}
+
+.bottom {
+    margin-block: 35px;
+    display: flex;
+    justify-content: center;
+}
