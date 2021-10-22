@@ -84,3 +84,9 @@ input:focus {
     display: flex;
     justify-content: center;
 }
+
+button.btn .btn__check {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}

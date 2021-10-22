@@ -32,7 +32,7 @@
                     <li>{{item.surname}}</li>
                     <li>{{item.debt|floatformat:2}}</li>
                     <li>
-                        <a href="">
+                        <a href="{% url 'edit' item.id %}">
                             <ion-icon class="edit" name="clipboard-outline"></ion-icon>
                         </a>
                         <a href="{% url 'delete' item.id %}">

@@ -5,12 +5,12 @@
 {% include 'partials/_header.html' %}
 
 <div class="wrapper">
-    <h1>Crie um registro para um cliente</h1>
+    <h1>Crie a ficha para o cliente: {{client.name}}</h1>
 </div>
 
 <hr>
 
-<form action="{% url 'create' %}" method="POST">
+<form action="{% url 'edit' client.id %}" method="POST">
 
     {% csrf_token %}
 
@@ -26,8 +26,8 @@
     <div class="bottom">
 
         <button class="btn" type="submit">
-            <span>Create </span>
-            <ion-icon name="arrow-forward-outline" class="btn__arrow"></ion-icon>
+            <span>Update </span>
+            <ion-icon class="btn__check" name="checkmark-done-outline"></ion-icon>
         </button>
 
     </div>
