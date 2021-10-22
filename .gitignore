@@ -3,3 +3,5 @@ crud-venv/
 __pycache__/
 preview/
 .dockerignore
+docker-compose.yml
+docker/
