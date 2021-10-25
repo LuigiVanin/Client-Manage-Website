@@ -47,3 +47,9 @@ DATABASES = {
 ```
 
 **If everything went as espected the project should be running on localhost:8000!!**
+
+<p align="center">
+
+![login area](./assets/login_area.png)
+
+</p>
