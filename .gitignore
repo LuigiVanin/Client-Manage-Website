@@ -5,3 +5,4 @@ preview/
 .dockerignore
 docker-compose.yml
 docker/
+.dockerfile

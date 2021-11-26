@@ -18,12 +18,6 @@ To run the project u need to create a virtual envirioment and install all depend
 
 _OBS.:_ you can have some problems installing the psycopg2 and its binary. There some reasons why your problem is happenig and to solve it you have two methids: you can search on google the return error or u can remove both dependencies from the requirements.txt and use a sqlite database.
 
-after that it is necesserie to create a superuser using the django cli.
-
-```bash
-(venv)$ python3 manage.py createsuperuser
-```
-
 Now. the last thing that is required is to set a database. This part part can be a little tricky, but it isnt impossible u just have to follow the step by step:
 
 1- Create a SQL database of your preferencie to use for this project. If you dont wanna put much work on that you can just use sqlite
@@ -46,7 +40,21 @@ DATABASES = {
 (venv)$ python3 manage.py migrate
 ```
 
-**If everything went as espected the project should be running on localhost:8000!!**
+after that it is necesserie to create a superuser using the django cli.
+
+The last piece is to create e super user on django admin
+
+```bash
+(venv)$ python3 manage.py createsuperuser
+```
+
+**If everything went as espected the project must be ready to go!!**
+
+```bash
+(venv)$ python3 manage.py runserver
+```
+
+**The application should be running at the 8000 localhost port!**
 
 <p align="center">
 
