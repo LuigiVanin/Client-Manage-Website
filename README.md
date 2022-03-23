@@ -1,8 +1,8 @@
 # Client Manage WebSite
 
-This is a 4fun project that tries to create a real world website. Although this is a attemp of a website there is no production mode, because it is just a project to learn about Django framework, so there is motivation to up a clound server or something like that.
+This is a 4fun project that tries to create a real website. Although this is an attemp of a website there is no production mode, because it is just a project to learn about Django framework, so there is no motivation to launch a cloud server.
 
-The website is a CRUD(Create, Read, update and Delete) that it propurse is manage a database of client, each user have its personal set of clients that can be deleted, updated and created. On this project there is a implementation of user autentication using Django framework dependencies, so the users would acess their client data in a secure way.
+The website is a CRUD(Create, Read, Update and Delete) that it propurse is manage a database of client, each user have its personal set of clients that can be deleted, updated and created. On this project there is a implementation of user autentication using Django framework dependencies, so the users would acess their client data in a secure way.
 
 <p align="center">
 <img src="./assets/project_video.gif" >
